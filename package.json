@@ -1,0 +1,22 @@
+{
+  "name": "gf-qiankun",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "initaa": "node config/install.js",
+    "serve": "node config/start.js",
+    "build": "node config/build.js",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/runtime": "^7.10.5",
+    "babel-preset-mobx": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.5"
+  }
+}
