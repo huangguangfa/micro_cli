@@ -7,7 +7,7 @@
 const noAuthApps = [
   {
     module: "subapp-sys",
-    defaultRegister: true,
+    defaultRegister: false,
     devEntry: "http://localhost:6002/",
     depEntry: "http://www.subapp-att.com.cn",
     routerBase: "/sys",
@@ -25,6 +25,14 @@ const noAuthApps = [
         ]
       }
     ]
+  },
+  {
+    module: "subapp-login",
+    defaultRegister: true,
+    devEntry: "http://localhost:6003/",
+    depEntry: "http://www.subapp-login.com",
+    routerBase: "/login",
+    data: []
   },
 ]
 

@@ -1,8 +1,7 @@
 /**
-*  auth: weilan
+*  auth: guangfa
 *  读取文件夹并打包项目
 */
-
 const fs = require('fs');
 const path = require('path');
 const util = require('util');

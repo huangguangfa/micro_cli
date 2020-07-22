@@ -11,16 +11,16 @@ import App from '../App.vue'
  * @param {Boolean} notCompatible true则不兼容qiankun1.0 【此参数为示例添加，实际应用自酌】
  */
 export function vueRender({ appContent, loading }, notCompatible) {
-  console.log('appContent',appContent)
-  console.log('loading',loading)
-  Vue.config.productionTip = false
-  if (notCompatible) {
-    new Vue({
-      router,
-      store,
-      render: h => h(App)
-    }).$mount("#mainApplication");
-    return;
-  }
+    console.log('appContent',appContent)
+    console.log('loading',loading)
+    Vue.config.productionTip = false
+    if (notCompatible) {
+        new Vue({
+            router,
+            store,
+            render: h => h(App)
+        }).$mount("#mainApplication");
+        return;
+    }
 }
 

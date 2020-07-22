@@ -1,41 +1,37 @@
 <template>
     <div class="home-container">
-        <div class="left">
-            <ul>
-                <li>智能考勤</li>
-                <li>系统管理</li>
-                <li>测试管理</li>
-                <li>测试管理</li>
-                <li>测试管理</li>
-                <p class="m-top">用户：
-                    <span class="usrName">{{ $store.getters.userInfo.name }}</span> 
-                </p>
-            </ul>
+        <!-- 头部 -->
+        <v-header v-show="$store.getters.loginStatus"></v-header>
+        <div class="main-content">
+            <!-- 左侧菜单栏 -->
+            <v-Sidebar v-show="$store.getters.loginStatus"></v-Sidebar>
+            <!-- 子应用渲染区 -->
+            <div class="page-conten">
+                <!-- qiankun2.0  container 模式-->
+                <div id="subapp-viewport" class="app-view-box"></div>
+            </div>
         </div>
-        <!-- 子应用渲染区 -->
-        <div class="page-conten">
-            <!-- qiankun2.0  container 模式-->
-            <div id="subapp-viewport" class="app-view-box"></div>
-        </div>
-        
     </div>
 </template>
-
+<script>
+    import vHeader from './Header'
+    import vSidebar from './Sidebar.vue'
+    export default{
+        components:{
+            vSidebar,vHeader
+        }
+    }
+</script>
 <style lang="less" scoped>
     .home-container{
-        display: flex;
-        .left{
-            width: 200px; margin-right: 10px;
-            ul{
-                li{
-                    text-align: center; border: 1px solid #eee; padding: 10px 0; cursor: pointer;
-                    &:hover{ background: wheat;}
-                }
+       height: 100%;
+        .main-content{
+            width: 100%;display: flex; 
+            .page-conten{
+                width: 100%; height: 100%;
             }
         }
-        .page-conten{
-            width: 100%;
-        }
+        
     }
     .m-top{ margin-top: 20px; margin-left: 10px;}
     .usrName{color: red;}

@@ -1,6 +1,6 @@
 /**
- * auth: weilan
- * time: 2017/01/17
+ * auth: guangfa
+ * time: 2019/07/20
  * des: 公共工具类
  */
 

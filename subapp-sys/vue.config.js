@@ -21,8 +21,8 @@ module.exports = {
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
-        // historyApiFallback:true,
-
+        //防止单体项目刷新后404
+        historyApiFallback:true,
     },
     
     // 自定义webpack配置

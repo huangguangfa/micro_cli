@@ -5,14 +5,14 @@ Vue.use(VueRouter)
 
 const routes = [
     {
-        path: '/',
-        name: 'About',
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+        path: '/user',
+        name: 'user',
+        component: () => import(/* webpackChunkName: "user" */ '../views/user.vue')
     },
     {
-        path: '/children',
-        name: 'children',
-        component: () => import(/* webpackChunkName: "about" */ '../views/children.vue')
+        path: '/role',
+        name: 'role',
+        component: () => import(/* webpackChunkName: "role" */ '../views/role.vue')
     }
 ]
 
