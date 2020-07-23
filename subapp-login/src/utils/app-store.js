@@ -12,20 +12,16 @@ const STORE = {};
  * @description 注意：子应用是附加在props上的onGlobalStateChange, setGlobalState方法（只用主应用注册了通信才会有）
  */
   const appStore = props => {
+
   /**
    * @name 监听应用间通信，并存入store
    */
     props?.onGlobalStateChange?.(
-        (value, prev) => {
-            console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev)
-            // store.dispatch('appstore/setMsg', value.msg)
+        (value) => {
+            console.log(`[onGlobalStateChange - ${props.name}]:`, value)
         },
         true
     );
-    props?.setGlobalState?.({
-        ignore: props.name,
-        msg: `来自${props.name}动态设定的消息`,
-    });
 
   /**
    * @name 将你需要的数据存起来，供下面setState方法使用

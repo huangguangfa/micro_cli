@@ -10,12 +10,16 @@
             {
                 "mName":"角色管理",
                 "url":"/sys/role"
+            },
+            {
+                "mName":"菜单管理",
+                "url":"/sys/menu"
             }
         ]
     },
     {
         "name":"车辆管理",
-        "id":"sys002",
+        "id":"car002",
         "menuList":[
             {
                 "mName":"车辆列表",

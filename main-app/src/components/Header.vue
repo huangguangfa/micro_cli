@@ -10,12 +10,17 @@
                     <span>{{ item.name }}</span>
                 </li>
             </ul>
+            <div class="outLogin" @click="outLogin">
+                <span class="userName">{{ $store.getters.userInfo.name }}</span>
+                退出登陆
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    import systemModule from './systemModule.json'
+    import systemModule from './systemModule.json';
+    import { routerGo } from '../utils/utils'
     export default{
         data(){
             return {
@@ -25,6 +30,7 @@
         created(){
             if(!this.$store.getters.systemMenuList){
                 this.switchSystem(this.systemModule[0])
+                routerGo(this.systemModule[0].menuList.url)
             }
         },
         methods:{
@@ -32,6 +38,19 @@
                 if(this.$store.getters.currentSystem === sys.id){ return false }
                 this.$store.commit('system/SET_CURRENTSYSTEM_VALUE',sys.id);
                 this.$store.commit('system/SET_SYSTEMMENULIST_VALUE',sys.menuList);
+                routerGo(sys.menuList[0].url)
+            },
+            outLogin(){
+                this.$confirm({
+                    icon:'gf-shanchu',
+                    content:'你确定要退出登陆吗？'
+                }).then( confirm =>{
+                    this.$store.commit('user/SET_LOGIN_VALUE',false);
+                    routerGo('/login')
+                    console.log(confirm)
+                }).catch( cancel =>{
+                    console.log(cancel)
+                })
             }
         }
     }
@@ -71,5 +90,11 @@
             border-bottom: 2px solid #1ca75f;
             span{font-weight: 700; font-size: 15px;}
         }
+    }
+    .outLogin{
+        font-size: 12px; line-height:54px; cursor: pointer;
+    }
+    .userName{
+        color: yellowgreen; border: 1px solid yellowgreen; padding: 5px; border-radius: 20px; line-height: 20px;
     }
 </style>    

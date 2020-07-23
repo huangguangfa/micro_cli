@@ -6,7 +6,7 @@
             <div class="login_content">
                 <p class="title">LOGIN</p>
                 <div class="changInput">
-                    <input placeholder="Enter userName" name="userName" />
+                    <input v-model="userName" placeholder="Enter userName" name="userName" />
                 </div>
                 <div class="changInput">
                     <input type="password" placeholder="Password" name="password" />
@@ -18,15 +18,28 @@
     </div>
 </template>
 <script>
+    import { routerGo } from '../utils/utils'
+    import { setState } from '../utils/app-store'
     export default{
+        data(){
+            return {
+                userName:'admin'
+            }
+        },
         methods:{
             login(){
-                console.log('xasxasxa')
+                setState({
+                    data:{
+                        name:this.userName
+                    },
+                    token:'32131231289634'
+                })
+                routerGo('/sys/user')
             }
         }
     }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .login{
     width: 100%; height: 100vh; display: flex; overflow: hidden;
     >

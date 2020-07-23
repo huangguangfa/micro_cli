@@ -3,12 +3,6 @@ export default {
     state: {
         userInfo: {
             name:'测试人张三',
-            meunList:[
-                {
-                    name:'人员录入',
-                    url:'/addUser'
-                }
-            ]
         },
         loginStatus:false,
     },

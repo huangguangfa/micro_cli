@@ -84,7 +84,8 @@ const qianKunStart = ( list ) => {
      * @name 设置默认进入的子应用
      * @param {String} 需要进入的子应用路由前缀
      */
-    setDefaultMountApp(defaultApp + '/');
+    defaultApp = store.getters.loginStatus && defaultApp  || '/login'
+    setDefaultMountApp( defaultApp);
 
     /**
      * @name 启动微前端
