@@ -14,7 +14,7 @@ console.log(`即将进入所有模块并启动服务：${JSON.stringify(sub_apps
 const exec = util.promisify(require('child_process').exec);
 function start() {
   sub_apps.forEach(async i => {
-    const { stdout, stderr } = await exec('npm run serve', { cwd: path.resolve(i) });
+    const { stdout, stderr } = await exec('npm run start', { cwd: path.resolve(i) });
   });
   exec('start http://localhost:6001/');
 };

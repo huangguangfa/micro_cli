@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "initaa": "node config/install.js",
-    "serve": "node config/start.js",
+    "start": "node config/start.js",
     "build": "node config/build.js",
     "lint": "vue-cli-service lint"
   },

@@ -34,6 +34,14 @@ const noAuthApps = [
     routerBase: "/login",
     data: []
   },
+  {
+    module: "subapp-car",
+    defaultRegister: false,
+    devEntry: "http://localhost:6004/",
+    depEntry: "http://www.subapp-car.com",
+    routerBase: "/car",
+    data: []
+  },
 ]
 
 export default noAuthApps;
