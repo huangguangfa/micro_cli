@@ -3,7 +3,7 @@ export default {
     state: {
         //菜单列表
         systemMenuList:[],
-        currentSystem:'sys001'
+        currentSystem:'sys001',
     },
     mutations: {
         SET_SYSTEMMENULIST_VALUE(state, data) {
@@ -11,6 +11,6 @@ export default {
         },
         SET_CURRENTSYSTEM_VALUE(state,data){
             state.currentSystem = data
-        }
+        },
     },
 }

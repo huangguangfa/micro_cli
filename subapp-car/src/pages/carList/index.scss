@@ -8,3 +8,7 @@
 .prompt{
     color: magenta;
 }
+.mes{
+    font-size: 12px;border: 1px solid lightcoral; color: lightcoral; padding: 5px; border-radius: 10px; display: block; width: 100px; text-align: center; margin-bottom: 10px;
+    &:hover{ background:lightcoral ; cursor: pointer; color: #fff;}
+} 

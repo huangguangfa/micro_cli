@@ -1,4 +1,5 @@
 import store from "@/store";
+
 /**
  * @name 导入注册并启动微应用函数
  */
@@ -20,7 +21,7 @@ const appStore = ( initGlobalState ) => {
     appsRefresh: false,
 
   });
-
+  
   /**
    * @name 监听数据变动
    * @param {Function} 监听到数据发生改变后的回调函数
@@ -31,8 +32,8 @@ const appStore = ( initGlobalState ) => {
     //进行登陆成功
     if(value.ignore === 'subapp-login'){
       store.commit('user/SET_LOGIN_VALUE',true)
-      store.commit('user/SET_USERINFO_VALUE',value.data)
     }
+    store.commit('user/SET_USERINFO_VALUE',value.data)
     value.appsRefresh && window?.location?.reload?.();
   });
 
@@ -41,7 +42,11 @@ const appStore = ( initGlobalState ) => {
    */
   setGlobalState({
     ignore: 'master',
-    data: '来自master动态设定的消息',
+    data: {
+      mes:'给初始化子应用发送一条通知数据',
+      sendUser:'master主应用',
+      name:'master默认用户'
+    },
   });
 }
 

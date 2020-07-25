@@ -9,6 +9,10 @@
                     <i class="iconfont"></i>
                     <span>{{ item.name }}</span>
                 </li>
+                <li class="message">
+                    <span class="mesContent">消息：{{ $store.getters.userInfo.mes || '暂无' }} </span> 
+                    <span class="sendUser">发送人：{{ $store.getters.userInfo.sendUser || '暂无' }}</span> 
+                </li>
             </ul>
             <div class="outLogin" @click="outLogin">
                 <span class="userName">{{ $store.getters.userInfo.name }}</span>
@@ -20,7 +24,7 @@
 
 <script>
     import systemModule from './systemModule.json';
-    import { routerGo } from '../utils/utils'
+    import { routerGo } from '../utils/utils';
     export default{
         data(){
             return {
@@ -35,6 +39,10 @@
         },
         methods:{
             switchSystem(sys){
+                this.$message({
+                    type:'success',
+                    message:'切换到'+ sys.name + '应用',
+                })
                 if(this.$store.getters.currentSystem === sys.id){ return false }
                 this.$store.commit('system/SET_CURRENTSYSTEM_VALUE',sys.id);
                 this.$store.commit('system/SET_SYSTEMMENULIST_VALUE',sys.menuList);
@@ -57,6 +65,7 @@
 </script>
 
 <style lang="less">
+    
     .header {
         position: relative;
         box-sizing: border-box;
@@ -89,6 +98,12 @@
             font-weight: 700; align-items: center;
             border-bottom: 2px solid #1ca75f;
             span{font-weight: 700; font-size: 15px;}
+        }
+        .message{
+            .mesContent{
+                font-size: 12px; width: 300px; color: yellowgreen; overflow: hidden; white-space: nowrap; margin-right: 20px;
+            }
+            .sendUser{ color: tomato; font-size: 12px;}
         }
     }
     .outLogin{

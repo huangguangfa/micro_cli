@@ -30,13 +30,15 @@
             login(){
                 setState({
                     data:{
-                        name:this.userName
+                        name:this.userName,
+                        mes:'通知个个应用用户已经登陆',
+                        sendUser:'Login子应用',
                     },
                     token:'32131231289634'
                 })
                 routerGo('/sys/user')
-            }
-        }
+            } 
+        }  
     }
 </script>
 <style lang="less" scoped>
