@@ -5,7 +5,8 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 module.exports = {
-    publicPath: `//localhost:${port}`,
+    // publicPath: `//localhost:${port}`,
+    publicPath: '/',
     outputDir: 'login',
     assetsDir: 'static',
     filenameHashing: true, 

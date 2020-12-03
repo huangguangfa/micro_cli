@@ -11,6 +11,7 @@
                 <div id="subapp-viewport" class="app-view-box"></div>
             </div>
         </div>
+        <img class="qrcode" src="https://gf-blogs.oss-cn-shenzhen.aliyuncs.com/%E5%B0%8F%E7%A8%8B%E5%BA%8F/WechatIMG129.jpeg" alt="">
     </div>
 </template>
 <script>
@@ -34,4 +35,5 @@
     }
     .m-top{ margin-top: 20px; margin-left: 10px;}
     .usrName{color: red;}
+    .qrcode{width: 150px; height: 150px; position: fixed;right: 40px;bottom: 10px;}
 </style>

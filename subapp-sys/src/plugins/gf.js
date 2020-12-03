@@ -1,9 +1,9 @@
 //加载第三方UI库
-import { fcwbutton,fcwtag, } from "fcw-gf";
+import fcwGf from "fcw-gf";
 
 export default {
     components: [
-        fcwbutton,fcwtag
+        fcwGf
     ],
     serve: [],
     methods: []

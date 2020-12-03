@@ -16,10 +16,10 @@ function start() {
   sub_apps.forEach(async i => {
     const { stdout, stderr } = await exec('npm run start', { cwd: path.resolve(i) });
   });
-  exec('start http://localhost:6001/');
+  exec('start http://localhost:6001');
 };
 start();
 
 process.on('unhandledRejection', (reason, p) => {
-  console.log('http://localhost:6001/');
+  console.log('http://localhost:6001');
 });

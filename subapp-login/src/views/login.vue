@@ -4,7 +4,7 @@
         <div class="login_right"></div>
         <div class="login_box">
             <div class="login_content">
-                <p class="title">LOGIN</p>
+                <p class="title">LOGIN(子应用）</p>
                 <div class="changInput">
                     <input v-model="userName" placeholder="Enter userName" name="userName" />
                 </div>

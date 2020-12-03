@@ -14,6 +14,11 @@
                     <span class="sendUser">发送人：{{ $store.getters.userInfo.sendUser || '暂无' }}</span> 
                 </li>
             </ul>
+            <div class="ui_btn">
+                <fcw-button type="success" size="mini" @click="toPage('https://huangguangfa.cn')">个人博客</fcw-button>
+                <fcw-button type="primary" size="mini" style="margin-left:5px" @click="toPage('http://fcwui.huangguangfa.cn')">个人UI库</fcw-button>
+            </div>
+            
             <div class="outLogin" @click="outLogin">
                 <span class="userName">{{ $store.getters.userInfo.name }}</span>
                 退出登陆
@@ -38,11 +43,10 @@
             }
         },
         methods:{
+            toPage(url){
+              window.open(url)
+            },
             switchSystem(sys){
-                this.$message({
-                    type:'success',
-                    message:'切换到'+ sys.name + '应用',
-                })
                 if(this.$store.getters.currentSystem === sys.id){ return false }
                 this.$store.commit('system/SET_CURRENTSYSTEM_VALUE',sys.id);
                 this.$store.commit('system/SET_SYSTEMMENULIST_VALUE',sys.menuList);
@@ -111,5 +115,8 @@
     }
     .userName{
         color: yellowgreen; border: 1px solid yellowgreen; padding: 5px; border-radius: 20px; line-height: 20px;
+    }
+    .ui_btn{display: flex;align-items: center;height: 54px;
+        button{font-size: 12px;}
     }
 </style>    

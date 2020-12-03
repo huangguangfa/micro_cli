@@ -9,7 +9,6 @@ import qianKunStart from "./app-register"
 import noAuthApps from "./app-config"
 
 
-
 /**
 * @name 验证用户身份并注册微应用
 */

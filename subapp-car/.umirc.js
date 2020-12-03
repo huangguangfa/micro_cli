@@ -11,10 +11,10 @@ export default {
 			]
 		}
 	],
-	// base: '', // 部署时非根目录需要配置路径前缀
+	// base: '', //部署时非根目录需要配置路径前缀
 	runtimePublicPath: false,
-	// publicPath: '',
-	// outputPath: '',
+	publicPath: 'http://106.54.70.48:6004/',
+	outputPath: 'car',
 	mountElementId: 'car',
 	plugins: [
 		[

@@ -26,7 +26,6 @@ const STORE = {};
         },true)
     }
 
-
   /**
    * @name 将你需要的数据存起来，供下面setState方法使用
    */

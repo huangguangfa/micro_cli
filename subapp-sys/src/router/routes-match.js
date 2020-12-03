@@ -40,6 +40,7 @@ function routeMatch(
    * @error A non-empty path must start with "/"
    * @des 添加错误路径重定向至404报错，需要以'/'开头
    */
+  
   /* let errorBox = {
     path: "*",
     redirect: "/err-404"

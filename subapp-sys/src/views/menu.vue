@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-    import {setState } from '../utils/app-store'
+    import {setState } from '../utils/app-store';
     export default{
         methods:{
             sendmsg(){

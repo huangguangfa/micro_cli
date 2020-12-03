@@ -15,7 +15,7 @@ import appStore from '../utils/app-store';
  */
 import GLOBAL from '../global';
 /**
- * @name 声明子应用挂载dom，如果不需要做keep-alive，则只需要一个dom即可；
+ * @name 声明子应用挂载dom，如果不需要做keep-alive，则只需要一个dom即可
  */
 const appContainer = "#subapp-viewport";
 
@@ -28,7 +28,7 @@ const appContainer = "#subapp-viewport";
  * @param components 主应要传递给子应用的组件类信息（只是一种方案 暂时不用）
  */
 let props = {
-    data: store.getters,
+    data:store.getters,
     emits,
     GLOBAL
 }
@@ -44,13 +44,14 @@ const qianKunStart = ( list ) => {
     let apps = []; // 子应用数组盒子
     let defaultApp = null; // 默认注册应用路由前缀
     let isDev = process.env.NODE_ENV === 'development'; // 根据开发环境|线上环境加载不同entry
-    list.forEach(i => {
+    //配置参考文档https://qiankun.umijs.org/zh/api#registermicroappsapps-lifecycles
+    list.forEach(i => { 
         apps.push({
-            name: i.module,
-            entry: isDev ? i.devEntry : i.depEntry,
-            container: appContainer,
-            activeRule: i.routerBase,
-            props: { ...props, routes: i.data, routerBase: i.routerBase }
+            name: i.module, //微应用的名称
+            entry: isDev ? i.devEntry : i.depEntry, //微应用的 entry 地址
+            container: appContainer, //微应用的容器节点的选择器或者 Element 实例
+            activeRule: i.routerBase, //微应用的激活规则路径 /login/xxx /sys/xxx
+            props: { ...props, routes: i.data, routerBase: i.routerBase } //子应用初次挂载传入给子应用的数据
         })
         if (i.defaultRegister) defaultApp = i.routerBase;
     });
@@ -59,22 +60,23 @@ const qianKunStart = ( list ) => {
      * @name 注册子应用
      * @param {Array} list subApps
      */
+    
     registerMicroApps(
         apps,
         {
             beforeLoad: [
                 app => {
-                    console.log('[LifeCycle] before load %c%s', 'color: green;', app.name);
+                    console.log('[主应用生命周期] before load %c%s', 'color: green;', app.name);
                 },
             ],
             beforeMount: [
                 app => {
-                    console.log('[LifeCycle] before mount %c%s', 'color: green;', app.name);
+                    console.log('[主应用生命周期] before mount %c%s', 'color: green;', app.name);
                 },
             ],
             afterUnmount: [
                 app => {
-                    console.log('[LifeCycle] after unmount %c%s', 'color: green;', app.name);
+                    console.log('[主应用生命周期] after unmount %c%s', 'color: green;', app.name);
                 },
             ]
         },
@@ -85,8 +87,7 @@ const qianKunStart = ( list ) => {
      * @param {String} 需要进入的子应用路由前缀
      */
     defaultApp = store.getters.loginStatus && defaultApp  || '/login'
-    setDefaultMountApp( defaultApp);
-
+    setDefaultMountApp( defaultApp );
     /**
      * @name 启动微前端
      */
@@ -95,7 +96,7 @@ const qianKunStart = ( list ) => {
     /**
      * @name 微前端启动进入第一个子应用后回调函数
      */
-    runAfterFirstMounted(() => { console.log('子应用开启成功') });
+    runAfterFirstMounted(() => { console.log( defaultApp +'--->子应用开启成功' ) });
 
     /**
      * @name 启动qiankun应用间通信机制

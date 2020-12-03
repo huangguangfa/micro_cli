@@ -32,6 +32,7 @@ const lifeCycle = () => {
      * @description 应用每次进入都会调用 mount 方法，通常我们在这里触发应用的渲染方法
      */
     async mount( props ) {
+        console.log('sys-mount',props)
         // 注册应用间通信
         appStore(props);
         // 注册微应用实例化函数

@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
     {
@@ -22,4 +22,4 @@ const routes = [
 ]
 
 //不再导出rouer实例而是导出路由数据
-export default routes
+export default routes;

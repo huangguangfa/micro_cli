@@ -4,8 +4,10 @@ const { name,port } = require('./package');
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
+const dev = process.env.NODE_ENV === 'developent'
 module.exports = {
-    publicPath: `//localhost:${port}`,
+    // publicPath: `//localhost:${port}`,
+    publicPath: '/',
     outputDir: 'sys',
     assetsDir: 'static',
     filenameHashing: true, 
