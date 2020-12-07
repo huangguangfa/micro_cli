@@ -3,7 +3,7 @@ node_modules/
 sys/
 car/
 login/
-main-app/
+app/
 
 dist/
 npm-debug.log/
