@@ -1,7 +1,7 @@
 const { port } = require("./package");
 module.exports = {
     publicPath: '/',
-    outputDir: 'main-app',
+    outputDir: 'app',
     assetsDir: 'static', 
     devServer: {
         // host: '0.0.0.0',

@@ -1,5 +1,5 @@
 /**
-*  auth: guangfa
+*  auth:guangfa
 *  读取文件夹并打包项目
 */
 const fs = require('fs');

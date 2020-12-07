@@ -6,7 +6,8 @@
     "initaa": "node config/install.js",
     "start": "node config/start.js",
     "build": "node config/build.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "sh gf.sh"
   },
   "dependencies": {
     "@babel/preset-env": "^7.10.4",
