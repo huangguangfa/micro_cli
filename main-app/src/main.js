@@ -9,7 +9,7 @@ import './core/install'
  * @description 2.0版本正常实例化vue
  */
 import { vueRender } from './core/render'
-vueRender({}, true)
+vueRender()
 
 
 /**

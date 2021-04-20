@@ -18,7 +18,6 @@
                 <fcw-button type="success" size="mini" @click="toPage('https://huangguangfa.cn')">个人博客</fcw-button>
                 <fcw-button type="primary" size="mini" style="margin-left:5px" @click="toPage('http://fcwui.huangguangfa.cn')">个人UI库</fcw-button>
             </div>
-            
             <div class="outLogin" @click="outLogin">
                 <span class="userName">{{ $store.getters.userInfo.name }}</span>
                 退出登陆

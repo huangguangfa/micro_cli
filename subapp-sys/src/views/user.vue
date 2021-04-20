@@ -3,6 +3,8 @@
         <fcw-tag type="warning">这里是系统管理模块😊---用户管理</fcw-tag>
         <p class="user">用户管理</p>
         <fcw-button type="primary" @click="toChildren">to角色管理</fcw-button>
+        <el-button type="primary">主要按钮</el-button>
+        
     </div>
 </template>
 

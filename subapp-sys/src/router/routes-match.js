@@ -12,7 +12,6 @@ function routeMatch(
   if (!Array.isArray(data)) return [];
   // 创建路由盒子
   let routerBox = [];
-
   routerMapFile(data);
   /**
 * @name 路由映射真实视图路径

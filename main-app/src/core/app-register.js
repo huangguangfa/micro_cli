@@ -53,6 +53,7 @@ const qianKunStart = ( list ) => {
             activeRule: i.routerBase, //微应用的激活规则路径 /login/xxx /sys/xxx
             props: { ...props, routes: i.data, routerBase: i.routerBase } //子应用初次挂载传入给子应用的数据
         })
+        //初始化第一个加载的应用
         if (i.defaultRegister) defaultApp = i.routerBase;
     });
 
@@ -92,7 +93,6 @@ const qianKunStart = ( list ) => {
      * @name 启动微前端
      */
     start();
-
     /**
      * @name 微前端启动进入第一个子应用后回调函数
      */

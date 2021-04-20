@@ -3,6 +3,12 @@ module.exports = {
     publicPath: '/',
     outputDir: 'app',
     assetsDir: 'static', 
+    // configureWebpack:{
+    //     externals: {
+    //         'element-ui':'ELEMENT',
+    //         'vue':'Vue'
+    //     }
+    // },
     devServer: {
         // host: '0.0.0.0',
         hot: true,
@@ -29,7 +35,7 @@ module.exports = {
         headers: {
             'Access-Control-Allow-Origin': '*',
         }
-    }
+    },   
 };
 
 
